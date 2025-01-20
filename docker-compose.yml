@@ -11,7 +11,7 @@ services:
       - ./laravel/laravel-project:/app
     ports:
       - "8000:8000"
-    command: bash -c "[[ ! -f artisan ]] && composer create-project laravel/laravel . || composer install && php artisan serve --host=0.0.0.0"
+    command: bash -c "[[ ! -f artisan ]] && composer create-project laravel/laravel . || php artisan serve --host=0.0.0.0"
     depends_on:
       - mariadb
 
