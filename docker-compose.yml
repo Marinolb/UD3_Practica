@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  laravel:
+    build:
+      context: ./laravel
+      dockerfile: Dockerfile
+    container_name: laravel
+    working_dir: /app
+    volumes:
+      - ./laravel/laravel-project:/app
+    ports:
+      - "8000:8000"
+    command: bash -c "[[ ! -f artisan ]] && composer create-project laravel/laravel . || composer install && php artisan serve --host=0.0.0.0"
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb-server
+    environment:
+      MYSQL_ROOT_PASSWORD: safepass123
+      MYSQL_DATABASE: IGFORMACION
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb-data:/var/lib/mysql
