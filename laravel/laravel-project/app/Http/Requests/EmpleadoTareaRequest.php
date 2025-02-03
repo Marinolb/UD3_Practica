@@ -33,4 +33,20 @@ class EmpleadoTareaRequest extends FormRequest
                 return [];
         }
     }
+    
+    public function messages()
+    {
+        return [
+            'empleado_id.required' => 'El empleado es obligatorio.',
+            'empleado_id.exists' => 'El empleado seleccionado no es válido.',
+
+            'tarea_id.required' => 'La tarea es obligatoria.',
+            'tarea_id.exists' => 'La tarea seleccionada no es válida.',
+
+            'progreso.required' => 'El progreso es obligatorio.',
+            'progreso.numeric' => 'El progreso debe ser un número.',
+            'progreso.min' => 'El progreso no puede ser menor a :min%.',
+            'progreso.max' => 'El progreso no puede ser mayor a :max%.',
+        ];
+    }
 }

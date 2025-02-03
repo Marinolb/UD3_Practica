@@ -46,7 +46,30 @@ class ProyectoRequest extends FormRequest
     public function messages()
     {
         return [
+           'nombre.required' => 'El nombre del proyecto es obligatorio.',
+            'nombre.string' => 'El nombre del proyecto debe ser un texto.',
+            'nombre.max' => 'El nombre del proyecto no puede superar los :max caracteres.',
+            
+            'descripcion.required' => 'La descripción del proyecto es obligatoria.',
+            'descripcion.string' => 'La descripción debe ser un texto.',
+            'descripcion.max' => 'La descripción no puede superar los :max caracteres.',
+            
+            'fecha_inicio.required' => 'La fecha de inicio es obligatoria.',
+            'fecha_inicio.date' => 'La fecha de inicio debe ser una fecha válida.',
+
+            'fecha_fin.required' => 'La fecha de finalización es obligatoria.',
+            'fecha_fin.date' => 'La fecha de finalización debe ser una fecha válida.',
             'fecha_fin.after_or_equal' => 'La fecha de fin debe ser mayor o igual que la de inicio.',
+            
+            'presupuesto.required' => 'El presupuesto es obligatorio.',
+            'presupuesto.numeric' => 'El presupuesto debe ser un número.',
+            'presupuesto.min' => 'El presupuesto debe ser al menos :min.',
+
+            'estado.required' => 'El estado del proyecto es obligatorio.',
+            'estado.in' => 'El estado del proyecto debe ser uno de los siguientes valores: activo, completado, en pausa o en progreso.',
+
+            'cliente_id.required' => 'El cliente es obligatorio.',
+            'cliente_id.exists' => 'El cliente seleccionado no es válido.',
             
         ];
     }

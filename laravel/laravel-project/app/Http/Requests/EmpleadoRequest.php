@@ -38,4 +38,28 @@ class EmpleadoRequest extends FormRequest
                 return [];
         }
     }
+    
+    public function messages()
+    {
+        return [
+            'nombre.required' => 'El nombre del empleado es obligatorio.',
+            'nombre.string' => 'El nombre del empleado debe ser un texto.',
+            'nombre.max' => 'El nombre no puede superar los :max caracteres.',
+
+            'email.required' => 'El correo electrónico del empleado es obligatorio.',
+            'email.email' => 'El formato del correo electrónico no es válido.',
+            'email.unique' => 'El correo electrónico ya está registrado.',
+
+            'telefono.required' => 'El teléfono del empleado es obligatorio.',
+            'telefono.string' => 'El teléfono debe ser un texto.',
+            'telefono.max' => 'El teléfono no puede superar los :max caracteres.',
+
+            'fecha_contratacion.required' => 'La fecha de contratación es obligatoria.',
+            'fecha_contratacion.date' => 'La fecha de contratación debe ser una fecha válida.',
+
+            'rol.required' => 'El rol del empleado es obligatorio.',
+            'rol.string' => 'El rol del empleado debe ser un texto.',
+            'rol.max' => 'El rol no puede superar los :max caracteres.',
+        ];
+    }
 }

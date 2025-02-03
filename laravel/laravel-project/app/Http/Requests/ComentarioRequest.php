@@ -33,4 +33,18 @@ class ComentarioRequest extends FormRequest
                 return [];
         }
     }
+    public function messages()
+    {
+        return [
+            'tarea_id.required' => 'La tarea es obligatoria.',
+            'tarea_id.exists' => 'La tarea seleccionada no es válida.',
+
+            'empleado_id.required' => 'El empleado es obligatorio.',
+            'empleado_id.exists' => 'El empleado seleccionado no es válido.',
+
+            'comentario.required' => 'El comentario es obligatorio.',
+            'comentario.string' => 'El comentario debe ser un texto.',
+            'comentario.max' => 'El comentario no puede superar los :max caracteres.',
+        ];
+    }
 }

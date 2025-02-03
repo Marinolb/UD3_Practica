@@ -36,4 +36,25 @@ class ClienteRequest extends FormRequest
                 return [];
         }
     }
+    
+    public function messages()
+    {
+        return [
+            'nombre.required' => 'El nombre del cliente es obligatorio.',
+            'nombre.string' => 'El nombre del cliente debe ser un texto.',
+            'nombre.max' => 'El nombre no puede superar los :max caracteres.',
+
+            'telefono.required' => 'El teléfono del cliente es obligatorio.',
+            'telefono.string' => 'El teléfono debe ser un texto.',
+            'telefono.max' => 'El teléfono no puede superar los :max caracteres.',
+
+            'email.required' => 'El correo electrónico del cliente es obligatorio.',
+            'email.email' => 'El formato del correo electrónico no es válido.',
+            'email.unique' => 'El correo electrónico ya está registrado.',
+
+            'direccion.required' => 'La dirección del cliente es obligatoria.',
+            'direccion.string' => 'La dirección debe ser un texto.',
+            'direccion.max' => 'La dirección no puede superar los :max caracteres.',
+        ];
+    }
 }
